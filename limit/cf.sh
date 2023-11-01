@@ -2,7 +2,7 @@
 MYIP=$(wget -qO- icanhazip.com);
 apt install jq curl -y
 clear
-read -p "Masukan Domain contoh :Dragon :" domen
+read -p "Masukan Domain contoh :Kirito :" domen
 DOMAIN=krito.my.id
 sub=${domen}
 #(</dev/urandom tr -dc a-z0-9 | head -c5)
