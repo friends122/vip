@@ -1,15 +1,17 @@
 #!/bin/bash
 MYIP=$(wget -qO- icanhazip.com);
 apt install jq curl -y
-#read -p "Masukan Domain (contoh : Dragon)" domen
-DOMAIN=klmpk-tunneling.my.id
-sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
-dns=${sub}.klmpk-tunneling.my.id
-CF_ID=andyyuda41@gmail.com
-CF_KEY=0d626234700bad388d6d07b49c42901445d1c
+clear
+read -p "Masukan Domain contoh :Dragon :" domen
+DOMAIN=krito.my.id
+sub=${domen}
+#(</dev/urandom tr -dc a-z0-9 | head -c5)
+dns=${sub}.krito.my.id
+CF_ID=friendsteamstore@gmail.com
+CF_KEY=32be52cc76e2577e60dd100c4d3959a535c5e
 set -euo pipefail
 IP=$(wget -qO- icanhazip.com);
-echo "Updating DNS for ${dns}..."
+echo "Updating Domain for ${dns}..."
 ZONE=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
      -H "X-Auth-Email: ${CF_ID}" \
      -H "X-Auth-Key: ${CF_KEY}" \
@@ -38,5 +40,5 @@ echo "$dns" > /root/scdomain
 echo "$dns" > /etc/xray/domain
 echo "$dns" > /etc/v2ray/domain
 echo "$dns" > /etc/xray/scdomain
-echo "IP=$dns" > /var/lib/kyt/ipvps.conf
+echo "$MYIP=$dns" > /var/lib/kyt/ipvps.conf
 cd
