@@ -3,10 +3,10 @@ MYIP=$(wget -qO- icanhazip.com);
 apt install jq curl -y
 clear
 read -p "Masukan Domain contoh :Kirito :" domen
-DOMAIN=krito.my.id
+DOMAIN=kiritotunneling.my.id
 sub=${domen}
 #(</dev/urandom tr -dc a-z0-9 | head -c5)
-dns=${sub}.krito.my.id
+dns=${sub}.kiritotunneling.my.id
 CF_ID=friendsteamstore@gmail.com
 CF_KEY=32be52cc76e2577e60dd100c4d3959a535c5e
 set -euo pipefail
