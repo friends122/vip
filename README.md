@@ -5,7 +5,7 @@
 </code></pre>
 
 ### UPDATE SCRIPT
-<pre><code>apt install -y && apt update -y && apt upgrade -y && apt install lolcat -y && gem install lolcat && wget -q https://raw.githubusercontent.com/friends122/vip/main/premi.sh && chmod +x premi.sh && ./premi.sh
+<pre><code>wget https://raw.githubusercontent.com/friends122/vip/main/update.sh && chmod +× update.sh && ./update.sh
 </code></pre>
 
 
