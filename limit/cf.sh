@@ -6,7 +6,7 @@ read -p "Masukan Domain contoh :Kirito :" domen
 DOMAIN=stoore.my.id
 sub=${domen}
 #(</dev/urandom tr -dc a-z0-9 | head -c5)
-dns=${sub}.kiritotunneling.my.id
+dns=${sub}.stoore.my.id
 CF_ID=friendsteamstore@gmail.com
 CF_KEY=32be52cc76e2577e60dd100c4d3959a535c5e
 set -euo pipefail
