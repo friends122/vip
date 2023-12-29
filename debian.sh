@@ -4,6 +4,9 @@ apt upgrade -y
 apt update -y
 apt install curl
 apt install wondershaper -y
+mkdir /etc/xray/IP
+MYIP=$(curl -sS ipv4.icanhazip.com)
+echo "$MYIP" >/etc/xray/IP
 Green="\e[92;1m"
 RED="\033[31m"
 YELLOW="\033[33m"
