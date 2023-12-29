@@ -19,7 +19,7 @@ red='\e[1;31m'
 green='\e[0;32m'
 TIME=$(date '+%d %b %Y')
 ipsaya=$(wget -qO- ipinfo.io/ip)
-echo "$ipsaya" >/etc/xray/IP
+echo "$ipsaya" >>/etc/xray/IP
 TIMES="10"
 CHATID="5808979739"
 KEY="6313005117:AAHeRxvQ-KWKbf4CU392ZY_xkHl7ZzSEf9E"
