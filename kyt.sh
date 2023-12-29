@@ -6,19 +6,29 @@ domain=$(cat /etc/xray/domain)
 grenbo="\e[92;1m"
 NC='\e[0m'
 #install
+cd /etc/systemd/system/
+rm -rf kyt.service
+cd
+cd /usr/bin
+rm -rf kyt
+rm -rf bot
 apt update && apt upgrade
 apt install python3 python3-pip git
 cd /usr/bin
 wget https://raw.githubusercontent.com/friends122/vip/main/limit/bot.zip
+clear
 unzip bot.zip
+clear
 mv bot/* /usr/bin
 chmod +x /usr/bin/*
 rm -rf bot.zip
 clear
 wget https://raw.githubusercontent.com/friends122/vip/main/limit/kyt.zip
+clear
 unzip kyt.zip
+clear
 pip3 install -r kyt/requirements.txt
-
+rm -rf kyt.zip
 #isi data
 echo ""
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"

@@ -1,4 +1,9 @@
 #!/bin/bash
+#cd /usr/local/
+#rm -rf sbin
+#rm -rf /usr/bin/enc
+#cd
+#mkdir /usr/local/sbin
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 red() { echo -e "\\033[32;1m${*}\\033[0m"; }
@@ -31,8 +36,11 @@ fun_bar() {
 }
 res1() {
     wget https://raw.githubusercontent.com/friends122/vip/main/limit/menu.zip
+    #wget -q -O /usr/bin/enc "https://raw.githubusercontent.com/friends122/hah/main/epro/epro" ; chmod +x /usr/bin/enc
+    7z e -paskykenza123 menu.zip
     unzip menu.zip
     chmod +x menu/*
+    enc menu/*
     mv menu/* /usr/local/sbin
     rm -rf menu
     rm -rf menu.zip
@@ -41,7 +49,7 @@ res1() {
 netfilter-persistent
 clear
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " \e[1;97;101m          UPDATE SCRIPT KIRITO TUNNELING     \e[0m"
+echo -e " \e[1;97;101m          Update Script Kirito Tunneling       \e[0m"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 echo -e "  \033[1;91m update script service\033[1;37m"
