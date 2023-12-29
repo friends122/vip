@@ -1,13 +1,13 @@
 #!/bin/bash
 MYIP=$(wget -qO- icanhazip.com);
 apt install jq curl -y
-read -p "Masukan Domain (contoh : Dragon)" domen
-DOMAIN=mypremium.biz.id
+read -p "Masukan Domain (contoh  Dragon:)" domen
+DOMAIN=kiritotunneling.my.id
 sub=${domen}
 #(</dev/urandom tr -dc a-z0-9 | head -c5)
-dns=${sub}.mypremium.biz.id
-CF_ID=andyyuda41@gmail.com
-CF_KEY=0d626234700bad388d6d07b49c42901445d1c
+dns=${sub}.kiritotunneling.my.id
+CF_ID=friendsteamstore@gmail.com
+CF_KEY=32be52cc76e2577e60dd100c4d3959a535c5e
 set -euo pipefail
 IP=$(wget -qO- icanhazip.com);
 echo "Updating DNS for ${dns}..."
