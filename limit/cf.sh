@@ -1,17 +1,16 @@
 #!/bin/bash
 MYIP=$(wget -qO- icanhazip.com);
 apt install jq curl -y
-clear
-read -p "Masukan Domain contoh :Kirito :" domen
-DOMAIN=kiritotunneling.my.id
+read -p "Masukan Domain (contoh : Dragon)" domen
+DOMAIN=mypremium.biz.id
 sub=${domen}
 #(</dev/urandom tr -dc a-z0-9 | head -c5)
-dns=${sub}. kiritotunneling.my.id
-CF_ID=friendsteamstore@gmail.com
-CF_KEY=32be52cc76e2577e60dd100c4d3959a535c5e
+dns=${sub}.mypremium.biz.id
+CF_ID=andyyuda41@gmail.com
+CF_KEY=0d626234700bad388d6d07b49c42901445d1c
 set -euo pipefail
 IP=$(wget -qO- icanhazip.com);
-echo "Updating Domain for ${dns}..."
+echo "Updating DNS for ${dns}..."
 ZONE=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
      -H "X-Auth-Email: ${CF_ID}" \
      -H "X-Auth-Key: ${CF_KEY}" \
@@ -40,5 +39,5 @@ echo "$dns" > /root/scdomain
 echo "$dns" > /etc/xray/domain
 echo "$dns" > /etc/v2ray/domain
 echo "$dns" > /etc/xray/scdomain
-echo "$MYIP=$dns" > /var/lib/kyt/ipvps.conf
+echo "IP=$dns" > /var/lib/kyt/ipvps.conf
 cd

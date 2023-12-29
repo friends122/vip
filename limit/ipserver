@@ -27,7 +27,7 @@ cat >/etc/iptables/rules.v4 <<-END
 -A INPUT -p tcp -m tcp --dport 88 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 68 -j ACCEPT
--A INPUT -p udp -m udp --dport 53 -j ACCEPT
+-A INPUT -p udp -m udp --dport 54 -j ACCEPT
 -A INPUT -p udp -m udp --dport 2200 -j ACCEPT
 -A INPUT -p udp -m udp --dport 2100 -j ACCEPT
 -A INPUT -p udp -m udp --dport 5300 -j ACCEPT
