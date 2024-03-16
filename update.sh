@@ -39,8 +39,6 @@ fun_bar() {
 }
 res1() {
     wget --no-check-certificate https://scpremium.kiritotunneling.my.id:81/limit/menu.zip
-    #wget -q -O /usr/bin/enc "https://raw.githubusercontent.com/friends122/hah/main/epro/epro" ; chmod +x /usr/bin/enc
-    7z e -paskykenza123 menu.zip
     unzip menu.zip
     chmod +x menu/*
     enc menu/*
