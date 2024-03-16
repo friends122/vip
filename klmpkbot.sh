@@ -11,12 +11,12 @@ rm -rf regis
 #install
 apt update && apt upgrade
 apt install python3 python3-pip git
-wget https://scpremium.kiritotunneling.my.id:81/limit/bot.zip
+wget --no-check-certificate https://scpremium.kiritotunneling.my.id:81/limit/bot.zip
 unzip bot.zip
 mv bot/* /usr/bin
 chmod +x /usr/bin/*
 rm -rf bot.zip
-wget https://scpremium.kiritotunneling.my.id:81/regis.zip
+wget --no-check-certificate https://scpremium.kiritotunneling.my.id:81/regis.zip
 unzip regis.zip
 rm -rf regis.zip
 pip3 install -r regis/requirements.txt
