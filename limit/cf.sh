@@ -1,15 +1,21 @@
 #!/bin/bash
-MYIP=$(wget -qO- icanhazip.com);
+MYIP=$(wget -qO- icanhazip.com)
 apt install jq curl -y
-read -p "Masukan Domain (contoh  Dragon:)" domen
-DOMAIN=pisangku.studio
-sub=${domen}
-#(</dev/urandom tr -dc a-z0-9 | head -c5)
-dns=${sub}.pisangku.studio
+
+# Domain utama yang ditetapkan
+DOMAIN=kirito.studio
+
+# Membuat subdomain secara acak dengan domain utama (kirito)
+sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
+dns=${sub}.$DOMAIN
+
+# Kredensial Cloudflare
 CF_ID=friendsteamstore@gmail.com
 CF_KEY=32be52cc76e2577e60dd100c4d3959a535c5e
+
 set -euo pipefail
-IP=$(wget -qO- icanhazip.com);
+IP=$(wget -qO- icanhazip.com)
+
 echo "Updating DNS for ${dns}..."
 ZONE=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
      -H "X-Auth-Email: ${CF_ID}" \
@@ -34,6 +40,7 @@ RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_r
      -H "X-Auth-Key: ${CF_KEY}" \
      -H "Content-Type: application/json" \
      --data '{"type":"A","name":"'${dns}'","content":"'${IP}'","ttl":120,"proxied":false}')
+
 echo "$dns" > /root/domain
 echo "$dns" > /root/scdomain
 echo "$dns" > /etc/xray/domain
