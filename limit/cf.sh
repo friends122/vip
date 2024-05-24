@@ -5,7 +5,7 @@ apt install jq curl -y
 # Domain utama yang ditetapkan
 DOMAIN=kirito.studio
 
-# Membuat subdomain secara acak dengan domain utama (kirito)
+# Membuat subdomain secara acak dengan domain utama 
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 dns=${sub}.$DOMAIN
 
